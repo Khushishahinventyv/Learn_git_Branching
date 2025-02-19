@@ -1,6 +1,6 @@
 
 # Learn_git_Branching
-```bash
+
 📁 **Learn_git_Branching**  
 ├── 📁 **A Mixed Bag**  
 ├── 📁 **Advanced Topics**  
@@ -9,4 +9,3 @@
 ├── 📁 **Ramping Up**  
 ├── 📄 **README.md**  
 └── 📁 **.git** (hidden)
-```
