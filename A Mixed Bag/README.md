@@ -7,10 +7,13 @@ Sometimes, we need to copy only a single commit from our history. To achieve thi
 - `git cherry-pick`
 
 ### Command
-![Git Command](image.png)
+```bash
+$ git checkout main
+$ git cherry-pick c4
+```
 
 ### Result
-![Git Result](image-1.png)
+![alt text](image.png)
 
 ---
 
@@ -23,10 +26,15 @@ A common scenario arises when we need to modify an earlier commit. For example, 
 4. Move `main` to the updated commit tree to finalize the process.
 
 ### Command
-![Git Command](image-2.png)
+```bash
+$ git rebase -i HEAD~2
+$ git rebase -i HEAD^
+$ git rebase -i HEAD~2
+$ git branch -f main c3''
+```
 
 ### Result
-![Git Result](image-3.png)
+![alt text](image-1.png)
 
 ---
 
@@ -34,10 +42,16 @@ A common scenario arises when we need to modify an earlier commit. For example, 
 While `git rebase -i` is useful, too much reordering can lead to conflicts. An alternative method is using `git cherry-pick` to apply a commit from anywhere in the tree onto `HEAD` (as long as it isn’t an ancestor of `HEAD`).
 
 ### Command
-![Git Command](image-4.png)
+```bash
+$ git checkout main
+$ git cherry-pick c2
+$ git rebase -i HEAD^
+$ git branch -f main c1
+$ git cherry-pick c2 c3
+```
 
 ### Result
-![Git Result](image-5.png)
+![alt text](image-2.png)
 
 ---
 
@@ -45,10 +59,14 @@ While `git rebase -i` is useful, too much reordering can lead to conflicts. An a
 When working on a project, we might want to mark important milestones like major releases or merges. Git provides `tags` as a way to permanently mark these points in history.
 
 ### Command
-![Git Command](image-6.png)
+```bash
+$ git tag v0 c1
+$ git tag v1 c2
+$ git checkout c2
+```
 
 ### Result
-![Git Result](image-7.png)
+![alt text](image-3.png)
 
 ---
 
@@ -56,7 +74,13 @@ When working on a project, we might want to mark important milestones like major
 Tags serve as great reference points in our repository. Git provides the `git describe` command, which shows where we are relative to the closest tag.
 
 ### Command
-![Git Command](image-8.png)
+```bash
+$ git describe main
+v0_2_gC2
+$ git describe side
+v1_1_gC4
+$ git commit
+```
 
 ### Result
-![Git Result](image-9.png)
+![alt text](image-4.png)

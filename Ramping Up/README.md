@@ -4,10 +4,12 @@
 Before we get to some of the more advanced features of Git, it's important to understand different ways to move through the commit tree that represents your project.
 
 ### Commands
-![Detached HEAD Commands](image-9.png)
+```bash
+$ git checkout c4
+```
 
 ### Result
-![Detached HEAD Result](image-11.png)
+![alt text](image.png)
 
 ---
 
@@ -20,10 +22,13 @@ Relative commits are powerful, but we will introduce two simple ones here:
 - Moving upwards a number of times with `~<num>`
 
 ### Commands
-![Relative Refs Commands](image-12.png)
+```bash
+$ git checkout c4
+$ git checkout HEAD^
+```
 
 ### Result
-![Relative Refs Result](image-13.png)
+![alt text](image-1.png)
 
 ---
 
@@ -32,10 +37,14 @@ The `~` operator
 If you want to move up multiple levels in the commit tree, it might be tedious to type `^` multiple times. Git provides the tilde `~` operator, which allows you to ascend a specified number of commits.
 
 ### Commands
-![Tilde Operator Commands](image.png)
+```bash
+$ git branch -f main c6
+$ git checkout HEAD~
+$ git branch -f bugFix c0
+```
 
 ### Result
-![Tilde Operator Result](image-2.png)
+![alt text](image-2.png)
 
 ---
 
@@ -48,8 +57,12 @@ There are two primary ways to undo changes in Git:
 - Using `git revert`
 
 ### Commands
-![Reversing Changes Commands](image-1.png)
+```bash
+$ git reset HEAD~1
+$ git checkout pushed
+$ git revert HEAD
+```
 
 ### Result
-![Reversing Changes Result](image-3.png)
+![alt text](image-3.png)
 

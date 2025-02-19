@@ -10,10 +10,12 @@ git cherry-pick <Commit1> <Commit2> <...>
 This command allows you to copy a series of commits below your current location (`HEAD`). Cherry-picking is useful when you need to apply specific changes from one branch to another.
 
 ### Commands
-![Cherry-Pick Commands](image.png)
+```bash
+$ git cherry-pick c3 c4 c7
+```
 
 ### Result
-![Cherry-Pick Result](image-1.png)
+![alt text](image-4.png)
 
 ---
 
@@ -23,7 +25,9 @@ Interactive rebase (`git rebase -i`) provides a way to rewrite commit history by
 When you run an interactive rebase, Git opens a UI (often in a text editor like Vim), displaying the list of commits and allowing you to choose how to modify them.
 
 ### Commands
-![Interactive Rebase Commands](image-2.png)
+```bash
+$ git rebase -i c1
+```
 
 ### Result
-![Interactive Rebase Result](image-3.png)
+![alt text](image-5.png)

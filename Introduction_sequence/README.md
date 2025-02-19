@@ -8,11 +8,13 @@ Welcome to the Git Introduction Sequence! This guide will walk you through the f
 A commit in a Git repository records a snapshot of all the tracked files in your directory. Think of it as a "save point" in your project's history.
 
 ### Commands
-![Commit Command](image.png)
+```bash
+$ git commit
+$ git commit
+```
 
 ### Result
-![Commit Result](image-1.png)
-
+![alt text](image-9.png)
 ---
 
 ## Level 2: Branching in Git
@@ -21,21 +23,30 @@ Branches in Git are lightweight pointers to specific commits. This makes working
 > **Best Practice**: *Branch early, and branch often!*
 
 ### Commands
-![Branching Commands](image-2.png)
+```bash
+$ git branch bugFix
+$ git checkout bugFix
+```
 
 ### Result
-![Branching Result](image-3.png)
-
+![alt text](image.png)
 ---
 
 ## Level 3: Merging in Gits
 Now that we can commit and branch, it's time to learn how to combine changes from different branches. Merging allows us to develop features separately and then integrate them back into the main branch.
 
 ### Commands
-![Merging Commands](image-4.png)
+```bash
+$ git branch bugFix
+$ git checkout bugFix
+$ git commit
+$ git checkout main
+$ git commit
+$ git merge bugFix
+```
 
 ### Result
-![Merging Result](image-6.png)
+![alt text](image-1.png)
 
 ---
 
@@ -44,9 +55,19 @@ Rebasing replays commits from one branch onto another, creating a cleaner and mo
 
 
 ### Commands
-![Rebase Commands](image-7.png)
+```bash
+$ git branch bugFix
+$ git commit
+$ git checkout bugFix
+$ git commit
+$ git checkout main
+$ git rebase bugFix
+$ git branch -f main c3
+$ git branch -f bugFix c2'
+$ git checkout bugFix
+```
 
 ### Result
-![Rebase Result](image-8.png)
+![alt text](image-2.png)
 
 

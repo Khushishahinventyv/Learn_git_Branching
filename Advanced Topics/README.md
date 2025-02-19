@@ -4,10 +4,16 @@
 Managing multiple branches can be tricky! Let’s rebase all the work from these branches onto `main`.
 
 ### Command
-![Git Command](image.png)
+```bash
+$ git rebase main bugFix
+$ git rebase bugFix c4
+$ git rebase HEAD side
+$ git rebase side another
+$ git branch -f main c7'
+```
 
 ### Result
-![Git Result](image-1.png)
+![alt text](image.png)
 
 ---
 
@@ -19,10 +25,12 @@ Rather than specifying the number of generations to go back (as `~` does), the `
 Git will normally follow the "first" parent upwards from a merge commit, but specifying a number with `^` changes this default behavior.
 
 ### Command
-![Git Command](image-2.png)
+```bash
+$ git branch bugWork main^^2^
+```
 
 ### Result
-![Git Result](image-3.png)
+![alt text](image-1.png)
 
 ---
 
@@ -36,8 +44,14 @@ Here, `main` is a few commits ahead of branches `one`, `two`, and `three`. For s
 - **Branch three**: Needs only one commit transferred.
 
 ### Command
-![Git Command](image-4.png)
+```bash
+$ git checkout one
+$ git cherry-pick c4 c3 c2
+$ git checkout two
+$ git cherry-pick c5 c4 c3 c2
+$ git branch -f three c2
+```
 
 ### Result
-![Git Result](image-5.png)
+![alt text](image-2.png)
 
